@@ -86,7 +86,7 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-bin_PROGRAMS = projet5$(EXEEXT)
+bin_PROGRAMS = projet$(EXEEXT)
 subdir = src
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.in
@@ -99,12 +99,12 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
-am_projet5_OBJECTS = main.$(OBJEXT) support.$(OBJEXT) \
-	interface.$(OBJEXT) callbacks.$(OBJEXT) centre.$(OBJEXT) \
-	coach.$(OBJEXT)
-projet5_OBJECTS = $(am_projet5_OBJECTS)
+am_projet_OBJECTS = main.$(OBJEXT) support.$(OBJEXT) \
+	interface.$(OBJEXT) callbacks.$(OBJEXT) event.$(OBJEXT) \
+	users.$(OBJEXT)
+projet_OBJECTS = $(am_projet_OBJECTS)
 am__DEPENDENCIES_1 =
-projet5_DEPENDENCIES = $(am__DEPENDENCIES_1)
+projet_DEPENDENCIES = $(am__DEPENDENCIES_1)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -133,8 +133,8 @@ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-SOURCES = $(projet5_SOURCES)
-DIST_SOURCES = $(projet5_SOURCES)
+SOURCES = $(projet_SOURCES)
+DIST_SOURCES = $(projet_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -278,15 +278,15 @@ INCLUDES = \
 	-DPACKAGE_LOCALE_DIR=\""$(prefix)/$(DATADIRNAME)/locale"\" \
 	@PACKAGE_CFLAGS@
 
-projet5_SOURCES = \
+projet_SOURCES = \
 	main.c \
 	support.c support.h \
 	interface.c interface.h \
 	callbacks.c callbacks.h \
-	centre.c centre.h \
-	coach.c coach.h
+	event.c event.h\
+	users.c users.h
 
-projet5_LDADD = @PACKAGE_LIBS@ $(INTLLIBS)
+projet_LDADD = @PACKAGE_LIBS@ $(INTLLIBS)
 all: all-am
 
 .SUFFIXES:
@@ -363,9 +363,9 @@ uninstall-binPROGRAMS:
 clean-binPROGRAMS:
 	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
 
-projet5$(EXEEXT): $(projet5_OBJECTS) $(projet5_DEPENDENCIES) $(EXTRA_projet5_DEPENDENCIES) 
-	@rm -f projet5$(EXEEXT)
-	$(AM_V_CCLD)$(LINK) $(projet5_OBJECTS) $(projet5_LDADD) $(LIBS)
+projet$(EXEEXT): $(projet_OBJECTS) $(projet_DEPENDENCIES) $(EXTRA_projet_DEPENDENCIES) 
+	@rm -f projet$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(projet_OBJECTS) $(projet_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -374,11 +374,11 @@ distclean-compile:
 	-rm -f *.tab.c
 
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/callbacks.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/centre.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/coach.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/event.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/interface.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/main.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/support.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/users.Po@am__quote@
 
 .c.o:
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<

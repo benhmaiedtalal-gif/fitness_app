@@ -5,7 +5,7 @@
 #define ENABLE_NLS 1
 
 /* Gettext package. */
-#define GETTEXT_PACKAGE "projet5"
+#define GETTEXT_PACKAGE "projet"
 
 /* Define to 1 if you have the `bind_textdomain_codeset' function. */
 #define HAVE_BIND_TEXTDOMAIN_CODESET 1
@@ -58,7 +58,7 @@
 #define HAVE_UNISTD_H 1
 
 /* Name of package */
-#define PACKAGE "projet5"
+#define PACKAGE "projet"
 
 /* Define to the address where bug reports for this package should be sent. */
 #define PACKAGE_BUGREPORT ""

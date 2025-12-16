@@ -710,7 +710,7 @@ create_COACH (void)
   GtkWidget *scrolledwindow21;
   GtkWidget *viewport2;
   GtkWidget *fixed22;
-  GtkWidget *ghtreeview1;
+  GtkWidget *ghtreeview;
   GtkWidget *label229;
   GtkWidget *ghbuttonrech;
   GtkWidget *alignment53;
@@ -822,10 +822,10 @@ create_COACH (void)
   gtk_widget_show (fixed22);
   gtk_container_add (GTK_CONTAINER (viewport2), fixed22);
 
-  ghtreeview1 = gtk_tree_view_new ();
-  gtk_widget_show (ghtreeview1);
-  gtk_fixed_put (GTK_FIXED (fixed22), ghtreeview1, 0, 0);
-  gtk_widget_set_size_request (ghtreeview1, 664, 208);
+  ghtreeview = gtk_tree_view_new ();
+  gtk_widget_show (ghtreeview);
+  gtk_fixed_put (GTK_FIXED (fixed22), ghtreeview, 0, 0);
+  gtk_widget_set_size_request (ghtreeview, 664, 208);
 
   label229 = gtk_label_new (_("NOM DU CENTRE"));
   gtk_widget_show (label229);
@@ -1223,7 +1223,7 @@ create_COACH (void)
   GLADE_HOOKUP_OBJECT (COACH, scrolledwindow21, "scrolledwindow21");
   GLADE_HOOKUP_OBJECT (COACH, viewport2, "viewport2");
   GLADE_HOOKUP_OBJECT (COACH, fixed22, "fixed22");
-  GLADE_HOOKUP_OBJECT (COACH, ghtreeview1, "ghtreeview1");
+  GLADE_HOOKUP_OBJECT (COACH, ghtreeview, "ghtreeview");
   GLADE_HOOKUP_OBJECT (COACH, label229, "label229");
   GLADE_HOOKUP_OBJECT (COACH, ghbuttonrech, "ghbuttonrech");
   GLADE_HOOKUP_OBJECT (COACH, alignment53, "alignment53");
@@ -1437,6 +1437,7 @@ create_ADMINISTRATION (void)
   GtkWidget *hbox42;
   GtkWidget *image53;
   GtkWidget *label215;
+  GtkWidget *ghspinmois;
   GtkWidget *eyafixed;
   GtkWidget *eyainputcoach;
   GtkWidget *eyainputdateheure;
@@ -1720,6 +1721,7 @@ create_ADMINISTRATION (void)
   dhiainputnom = gtk_entry_new ();
   gtk_fixed_put (GTK_FIXED (dhiafixed), dhiainputnom, 128, 392);
   gtk_widget_set_size_request (dhiainputnom, 184, 32);
+  gtk_entry_set_visibility (GTK_ENTRY (dhiainputnom), FALSE);
   gtk_entry_set_invisible_char (GTK_ENTRY (dhiainputnom), 8226);
 
   vseparator1 = gtk_vseparator_new ();
@@ -2005,6 +2007,7 @@ create_ADMINISTRATION (void)
   gtk_widget_show (ghinputnom);
   gtk_fixed_put (GTK_FIXED (ghfixed), ghinputnom, 128, 336);
   gtk_widget_set_size_request (ghinputnom, 192, 30);
+  gtk_entry_set_visibility (GTK_ENTRY (ghinputnom), FALSE);
   gtk_entry_set_invisible_char (GTK_ENTRY (ghinputnom), 8226);
 
   ghinputtel = gtk_entry_new ();
@@ -2966,6 +2969,7 @@ create_ADMINISTRATION (void)
   gtk_widget_show (ranainputnomc);
   gtk_fixed_put (GTK_FIXED (ranafixed), ranainputnomc, 128, 336);
   gtk_widget_set_size_request (ranainputnomc, 192, 32);
+  gtk_entry_set_visibility (GTK_ENTRY (ranainputnomc), FALSE);
   gtk_entry_set_invisible_char (GTK_ENTRY (ranainputnomc), 8226);
 
   entry1 = gtk_entry_new ();
@@ -3148,6 +3152,7 @@ create_ADMINISTRATION (void)
   gtk_widget_show (chihebinputnom);
   gtk_fixed_put (GTK_FIXED (chihebfixedadmin), chihebinputnom, 128, 336);
   gtk_widget_set_size_request (chihebinputnom, 192, 30);
+  gtk_entry_set_visibility (GTK_ENTRY (chihebinputnom), FALSE);
   gtk_entry_set_invisible_char (GTK_ENTRY (chihebinputnom), 8226);
 
   chihebinputid = gtk_entry_new ();

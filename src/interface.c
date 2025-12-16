@@ -1654,18 +1654,12 @@ create_ADMINISTRATION (void)
   GtkWidget *chiheblabeltarif;
   GtkWidget *chihebscalecapacite;
   GtkWidget *chiheblabeletat;
-  GtkWidget *chiheblabelcoach;
   GtkWidget *chihebinputperiode;
   GtkWidget *chiheblabelniveaux;
   GtkWidget *chihebcheckniveauavance;
   GtkWidget *chihebcategorielabel;
   GtkWidget *chiheblabelcapacite;
   GtkWidget *chiheblabelnom;
-  GtkWidget *chihebbuttonajout;
-  GtkWidget *alignment38;
-  GtkWidget *hbox38;
-  GtkWidget *image49;
-  GtkWidget *label181;
   GtkWidget *chihebbuttonmodifier;
   GtkWidget *chihebbuttonsupprimer;
   GtkWidget *chihebcomboetat;
@@ -1698,6 +1692,12 @@ create_ADMINISTRATION (void)
   GtkWidget *chihebcheckniveauinter;
   GtkWidget *dec6;
   GtkWidget *chiheblabelid;
+  GtkWidget *chiheblabelcoach;
+  GtkWidget *chihebbuttonajout;
+  GtkWidget *alignment38;
+  GtkWidget *hbox38;
+  GtkWidget *image49;
+  GtkWidget *label181;
   GtkWidget *label60;
 
   ADMINISTRATION = gtk_window_new (GTK_WINDOW_TOPLEVEL);
@@ -3260,11 +3260,6 @@ create_ADMINISTRATION (void)
   gtk_fixed_put (GTK_FIXED (chihebfixedadmin), chiheblabeletat, 0, 464);
   gtk_widget_set_size_request (chiheblabeletat, 32, 32);
 
-  chiheblabelcoach = gtk_label_new (_("COACH"));
-  gtk_widget_show (chiheblabelcoach);
-  gtk_fixed_put (GTK_FIXED (chihebfixedadmin), chiheblabelcoach, 360, 464);
-  gtk_widget_set_size_request (chiheblabelcoach, 51, 24);
-
   chihebinputperiode = gtk_label_new (_("PERIODE"));
   gtk_widget_show (chihebinputperiode);
   gtk_fixed_put (GTK_FIXED (chihebfixedadmin), chihebinputperiode, 0, 536);
@@ -3294,27 +3289,6 @@ create_ADMINISTRATION (void)
   gtk_widget_show (chiheblabelnom);
   gtk_fixed_put (GTK_FIXED (chihebfixedadmin), chiheblabelnom, 0, 344);
   gtk_widget_set_size_request (chiheblabelnom, 48, 16);
-
-  chihebbuttonajout = gtk_button_new ();
-  gtk_widget_show (chihebbuttonajout);
-  gtk_fixed_put (GTK_FIXED (chihebfixedadmin), chihebbuttonajout, 248, 600);
-  gtk_widget_set_size_request (chihebbuttonajout, 130, 32);
-
-  alignment38 = gtk_alignment_new (0.5, 0.5, 0, 0);
-  gtk_widget_show (alignment38);
-  gtk_container_add (GTK_CONTAINER (chihebbuttonajout), alignment38);
-
-  hbox38 = gtk_hbox_new (FALSE, 2);
-  gtk_widget_show (hbox38);
-  gtk_container_add (GTK_CONTAINER (alignment38), hbox38);
-
-  image49 = gtk_image_new_from_stock ("gtk-add", GTK_ICON_SIZE_BUTTON);
-  gtk_widget_show (image49);
-  gtk_box_pack_start (GTK_BOX (hbox38), image49, FALSE, FALSE, 0);
-
-  label181 = gtk_label_new_with_mnemonic (_("AJOUTER"));
-  gtk_widget_show (label181);
-  gtk_box_pack_start (GTK_BOX (hbox38), label181, FALSE, FALSE, 0);
 
   chihebbuttonmodifier = gtk_button_new_with_mnemonic (_("MODIFIER"));
   gtk_widget_show (chihebbuttonmodifier);
@@ -3452,6 +3426,32 @@ create_ADMINISTRATION (void)
   gtk_fixed_put (GTK_FIXED (chihebfixedadmin), chiheblabelid, 0, 272);
   gtk_widget_set_size_request (chiheblabelid, 89, 32);
   gtk_label_set_justify (GTK_LABEL (chiheblabelid), GTK_JUSTIFY_FILL);
+
+  chiheblabelcoach = gtk_label_new (_("COACH"));
+  gtk_widget_show (chiheblabelcoach);
+  gtk_fixed_put (GTK_FIXED (chihebfixedadmin), chiheblabelcoach, 368, 464);
+  gtk_widget_set_size_request (chiheblabelcoach, 51, 24);
+
+  chihebbuttonajout = gtk_button_new ();
+  gtk_widget_show (chihebbuttonajout);
+  gtk_fixed_put (GTK_FIXED (chihebfixedadmin), chihebbuttonajout, 248, 600);
+  gtk_widget_set_size_request (chihebbuttonajout, 130, 32);
+
+  alignment38 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment38);
+  gtk_container_add (GTK_CONTAINER (chihebbuttonajout), alignment38);
+
+  hbox38 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox38);
+  gtk_container_add (GTK_CONTAINER (alignment38), hbox38);
+
+  image49 = gtk_image_new_from_stock ("gtk-add", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image49);
+  gtk_box_pack_start (GTK_BOX (hbox38), image49, FALSE, FALSE, 0);
+
+  label181 = gtk_label_new_with_mnemonic (_("AJOUTER"));
+  gtk_widget_show (label181);
+  gtk_box_pack_start (GTK_BOX (hbox38), label181, FALSE, FALSE, 0);
 
   label60 = gtk_label_new (_("EVENEMENTS"));
   gtk_widget_show (label60);
@@ -3743,9 +3743,6 @@ create_ADMINISTRATION (void)
   g_signal_connect ((gpointer) chihebcheckniveauavance, "toggled",
                     G_CALLBACK (on_chihebcheckniveauavance_toggled),
                     NULL);
-  g_signal_connect ((gpointer) chihebbuttonajout, "clicked",
-                    G_CALLBACK (on_chihebbuttonajout_clicked),
-                    NULL);
   g_signal_connect ((gpointer) chihebbuttonmodifier, "clicked",
                     G_CALLBACK (on_chihebbuttonmodifier_clicked),
                     NULL);
@@ -3817,6 +3814,9 @@ create_ADMINISTRATION (void)
                     NULL);
   g_signal_connect ((gpointer) dec6, "clicked",
                     G_CALLBACK (on_dec6_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) chihebbuttonajout, "clicked",
+                    G_CALLBACK (on_chihebbuttonajout_clicked),
                     NULL);
 
   gtk_label_set_mnemonic_widget (GTK_LABEL (label214), ghinputrech);
@@ -4152,18 +4152,12 @@ create_ADMINISTRATION (void)
   GLADE_HOOKUP_OBJECT (ADMINISTRATION, chiheblabeltarif, "chiheblabeltarif");
   GLADE_HOOKUP_OBJECT (ADMINISTRATION, chihebscalecapacite, "chihebscalecapacite");
   GLADE_HOOKUP_OBJECT (ADMINISTRATION, chiheblabeletat, "chiheblabeletat");
-  GLADE_HOOKUP_OBJECT (ADMINISTRATION, chiheblabelcoach, "chiheblabelcoach");
   GLADE_HOOKUP_OBJECT (ADMINISTRATION, chihebinputperiode, "chihebinputperiode");
   GLADE_HOOKUP_OBJECT (ADMINISTRATION, chiheblabelniveaux, "chiheblabelniveaux");
   GLADE_HOOKUP_OBJECT (ADMINISTRATION, chihebcheckniveauavance, "chihebcheckniveauavance");
   GLADE_HOOKUP_OBJECT (ADMINISTRATION, chihebcategorielabel, "chihebcategorielabel");
   GLADE_HOOKUP_OBJECT (ADMINISTRATION, chiheblabelcapacite, "chiheblabelcapacite");
   GLADE_HOOKUP_OBJECT (ADMINISTRATION, chiheblabelnom, "chiheblabelnom");
-  GLADE_HOOKUP_OBJECT (ADMINISTRATION, chihebbuttonajout, "chihebbuttonajout");
-  GLADE_HOOKUP_OBJECT (ADMINISTRATION, alignment38, "alignment38");
-  GLADE_HOOKUP_OBJECT (ADMINISTRATION, hbox38, "hbox38");
-  GLADE_HOOKUP_OBJECT (ADMINISTRATION, image49, "image49");
-  GLADE_HOOKUP_OBJECT (ADMINISTRATION, label181, "label181");
   GLADE_HOOKUP_OBJECT (ADMINISTRATION, chihebbuttonmodifier, "chihebbuttonmodifier");
   GLADE_HOOKUP_OBJECT (ADMINISTRATION, chihebbuttonsupprimer, "chihebbuttonsupprimer");
   GLADE_HOOKUP_OBJECT (ADMINISTRATION, chihebcomboetat, "chihebcomboetat");
@@ -4196,6 +4190,12 @@ create_ADMINISTRATION (void)
   GLADE_HOOKUP_OBJECT (ADMINISTRATION, chihebcheckniveauinter, "chihebcheckniveauinter");
   GLADE_HOOKUP_OBJECT (ADMINISTRATION, dec6, "dec6");
   GLADE_HOOKUP_OBJECT (ADMINISTRATION, chiheblabelid, "chiheblabelid");
+  GLADE_HOOKUP_OBJECT (ADMINISTRATION, chiheblabelcoach, "chiheblabelcoach");
+  GLADE_HOOKUP_OBJECT (ADMINISTRATION, chihebbuttonajout, "chihebbuttonajout");
+  GLADE_HOOKUP_OBJECT (ADMINISTRATION, alignment38, "alignment38");
+  GLADE_HOOKUP_OBJECT (ADMINISTRATION, hbox38, "hbox38");
+  GLADE_HOOKUP_OBJECT (ADMINISTRATION, image49, "image49");
+  GLADE_HOOKUP_OBJECT (ADMINISTRATION, label181, "label181");
   GLADE_HOOKUP_OBJECT (ADMINISTRATION, label60, "label60");
 
   return ADMINISTRATION;

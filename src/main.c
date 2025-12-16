@@ -17,7 +17,6 @@ main (int argc, char *argv[])
 {
   GtkWidget *MEMBRE;
   GtkWidget *COACH;
-  GtkWidget *ADMINISTRATION;
   GtkWidget *CONNECTION;
 
 #ifdef ENABLE_NLS
@@ -36,12 +35,6 @@ main (int argc, char *argv[])
    * (except popup menus), just so that you see something after building
    * the project. Delete any components that you don't want shown initially.
    */
-  MEMBRE = create_MEMBRE ();
-  gtk_widget_show (MEMBRE);
-  COACH = create_COACH ();
-  gtk_widget_show (COACH);
-  ADMINISTRATION = create_ADMINISTRATION ();
-  gtk_widget_show (ADMINISTRATION);
   CONNECTION = create_CONNECTION ();
   gtk_widget_show (CONNECTION);
 
