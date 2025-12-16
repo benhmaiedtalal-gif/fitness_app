@@ -12,8 +12,8 @@
 # - Modified by jacob berkman <jacob@ximian.com> to install
 #   Makefile.in.in and po2tbl.sed.in for use with glib-gettextize
 
-GETTEXT_PACKAGE = projet-final1
-PACKAGE = projet-final1
+GETTEXT_PACKAGE = projet5
+PACKAGE = projet5
 VERSION = 0.1
 
 SHELL = /bin/bash

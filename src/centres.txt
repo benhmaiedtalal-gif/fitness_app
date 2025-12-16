@@ -1,0 +1,2 @@
+55;rana;talel;42;06:00;INDEPENDANT
+01;rana;klibia;50;06:00;INDEPENDANT

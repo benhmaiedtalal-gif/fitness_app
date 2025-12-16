@@ -70,10 +70,10 @@ am__make_running_with_option = \
   test $$has_opt = yes
 am__make_dryrun = (target_option=n; $(am__make_running_with_option))
 am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
-pkgdatadir = $(datadir)/projet-final1
-pkgincludedir = $(includedir)/projet-final1
-pkglibdir = $(libdir)/projet-final1
-pkglibexecdir = $(libexecdir)/projet-final1
+pkgdatadir = $(datadir)/projet5
+pkgincludedir = $(includedir)/projet5
+pkglibdir = $(libdir)/projet5
+pkglibexecdir = $(libexecdir)/projet5
 am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
 install_sh_DATA = $(install_sh) -c -m 644
 install_sh_PROGRAM = $(install_sh) -c
@@ -86,7 +86,7 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-bin_PROGRAMS = projet-final1$(EXEEXT)
+bin_PROGRAMS = projet5$(EXEEXT)
 subdir = src
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.in
@@ -99,11 +99,12 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
-am_projet_final1_OBJECTS = main.$(OBJEXT) support.$(OBJEXT) \
-	interface.$(OBJEXT) callbacks.$(OBJEXT) membre.$(OBJEXT)
-projet_final1_OBJECTS = $(am_projet_final1_OBJECTS)
+am_projet5_OBJECTS = main.$(OBJEXT) support.$(OBJEXT) \
+	interface.$(OBJEXT) callbacks.$(OBJEXT) centre.$(OBJEXT) \
+	coach.$(OBJEXT)
+projet5_OBJECTS = $(am_projet5_OBJECTS)
 am__DEPENDENCIES_1 =
-projet_final1_DEPENDENCIES = $(am__DEPENDENCIES_1)
+projet5_DEPENDENCIES = $(am__DEPENDENCIES_1)
 AM_V_P = $(am__v_P_$(V))
 am__v_P_ = $(am__v_P_$(AM_DEFAULT_VERBOSITY))
 am__v_P_0 = false
@@ -132,8 +133,8 @@ AM_V_CCLD = $(am__v_CCLD_$(V))
 am__v_CCLD_ = $(am__v_CCLD_$(AM_DEFAULT_VERBOSITY))
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-SOURCES = $(projet_final1_SOURCES)
-DIST_SOURCES = $(projet_final1_SOURCES)
+SOURCES = $(projet5_SOURCES)
+DIST_SOURCES = $(projet5_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -160,12 +161,12 @@ ETAGS = etags
 CTAGS = ctags
 am__DIST_COMMON = $(srcdir)/Makefile.in $(top_srcdir)/depcomp
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} "/home/dhia/projet final1/missing" aclocal-1.15
+ACLOCAL = ${SHELL} /home/rana/Projects/projet5/missing aclocal-1.15
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 1
-AUTOCONF = ${SHELL} "/home/dhia/projet final1/missing" autoconf
-AUTOHEADER = ${SHELL} "/home/dhia/projet final1/missing" autoheader
-AUTOMAKE = ${SHELL} "/home/dhia/projet final1/missing" automake-1.15
+AUTOCONF = ${SHELL} /home/rana/Projects/projet5/missing autoconf
+AUTOHEADER = ${SHELL} /home/rana/Projects/projet5/missing autoheader
+AUTOMAKE = ${SHELL} /home/rana/Projects/projet5/missing automake-1.15
 AWK = mawk
 CATALOGS = 
 CATOBJEXT = .gmo
@@ -183,7 +184,7 @@ ECHO_N = -n
 ECHO_T = 
 EGREP = /bin/grep -E
 EXEEXT = 
-GETTEXT_PACKAGE = projet-final1
+GETTEXT_PACKAGE = projet5
 GMOFILES = 
 GMSGFMT = /usr/bin/msgfmt
 GREP = /bin/grep
@@ -200,13 +201,13 @@ LIBOBJS =
 LIBS = 
 LTLIBOBJS = 
 MAINT = 
-MAKEINFO = ${SHELL} "/home/dhia/projet final1/missing" makeinfo
+MAKEINFO = ${SHELL} /home/rana/Projects/projet5/missing makeinfo
 MKDIR_P = /bin/mkdir -p
 MKINSTALLDIRS = ./mkinstalldirs
 MSGFMT = /usr/bin/msgfmt
 MSGFMT_OPTS = -c
 OBJEXT = o
-PACKAGE = projet-final1
+PACKAGE = projet5
 PACKAGE_BUGREPORT = 
 PACKAGE_CFLAGS = -pthread -I/usr/include/gtk-2.0 -I/usr/lib/x86_64-linux-gnu/gtk-2.0/include -I/usr/include/gio-unix-2.0/ -I/usr/include/cairo -I/usr/include/pango-1.0 -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/freetype2 -I/usr/include/libpng16
 PACKAGE_LIBS = -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lfontconfig -lfreetype
@@ -229,10 +230,10 @@ STRIP =
 USE_NLS = yes
 VERSION = 0.1
 XGETTEXT = /usr/bin/xgettext
-abs_builddir = /home/dhia/projet final1/src
-abs_srcdir = /home/dhia/projet final1/src
-abs_top_builddir = /home/dhia/projet final1
-abs_top_srcdir = /home/dhia/projet final1
+abs_builddir = /home/rana/Projects/projet5/src
+abs_srcdir = /home/rana/Projects/projet5/src
+abs_top_builddir = /home/rana/Projects/projet5
+abs_top_srcdir = /home/rana/Projects/projet5
 ac_ct_CC = gcc
 am__include = include
 am__leading_dot = .
@@ -251,7 +252,7 @@ host_alias =
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} '/home/dhia/projet final1/install-sh'
+install_sh = ${SHELL} /home/rana/Projects/projet5/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -277,14 +278,15 @@ INCLUDES = \
 	-DPACKAGE_LOCALE_DIR=\""$(prefix)/$(DATADIRNAME)/locale"\" \
 	-pthread -I/usr/include/gtk-2.0 -I/usr/lib/x86_64-linux-gnu/gtk-2.0/include -I/usr/include/gio-unix-2.0/ -I/usr/include/cairo -I/usr/include/pango-1.0 -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libpng16 -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/freetype2 -I/usr/include/libpng16
 
-projet_final1_SOURCES = \
+projet5_SOURCES = \
 	main.c \
 	support.c support.h \
 	interface.c interface.h \
-	callbacks.c callbacks.h\
-	membre.c membre.h
+	callbacks.c callbacks.h \
+	centre.c centre.h \
+	coach.c coach.h
 
-projet_final1_LDADD = -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lfontconfig -lfreetype $(INTLLIBS)
+projet5_LDADD = -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lfontconfig -lfreetype $(INTLLIBS)
 all: all-am
 
 .SUFFIXES:
@@ -361,9 +363,9 @@ uninstall-binPROGRAMS:
 clean-binPROGRAMS:
 	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
 
-projet-final1$(EXEEXT): $(projet_final1_OBJECTS) $(projet_final1_DEPENDENCIES) $(EXTRA_projet_final1_DEPENDENCIES) 
-	@rm -f projet-final1$(EXEEXT)
-	$(AM_V_CCLD)$(LINK) $(projet_final1_OBJECTS) $(projet_final1_LDADD) $(LIBS)
+projet5$(EXEEXT): $(projet5_OBJECTS) $(projet5_DEPENDENCIES) $(EXTRA_projet5_DEPENDENCIES) 
+	@rm -f projet5$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(projet5_OBJECTS) $(projet5_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -372,9 +374,10 @@ distclean-compile:
 	-rm -f *.tab.c
 
 include ./$(DEPDIR)/callbacks.Po
+include ./$(DEPDIR)/centre.Po
+include ./$(DEPDIR)/coach.Po
 include ./$(DEPDIR)/interface.Po
 include ./$(DEPDIR)/main.Po
-include ./$(DEPDIR)/membre.Po
 include ./$(DEPDIR)/support.Po
 
 .c.o:

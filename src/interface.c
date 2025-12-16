@@ -1719,7 +1719,6 @@ create_ADMINISTRATION (void)
   gtk_entry_set_invisible_char (GTK_ENTRY (dhiainputmdp), 8226);
 
   dhiainputnom = gtk_entry_new ();
-  gtk_widget_show (dhiainputnom);
   gtk_fixed_put (GTK_FIXED (dhiafixed), dhiainputnom, 128, 392);
   gtk_widget_set_size_request (dhiainputnom, 184, 32);
   gtk_entry_set_invisible_char (GTK_ENTRY (dhiainputnom), 8226);

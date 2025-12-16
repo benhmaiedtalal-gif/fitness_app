@@ -2702,7 +2702,7 @@ fi
 
 # Define the identity of the package.
 
- PACKAGE=projet-final1
+ PACKAGE=projet5
  VERSION=0.1
 
 
@@ -5968,7 +5968,7 @@ fi
 
 
 
-GETTEXT_PACKAGE=projet-final1
+GETTEXT_PACKAGE=projet5
 
 
 cat >>confdefs.h <<_ACEOF

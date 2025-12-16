@@ -5,14 +5,15 @@ INCLUDES = \
 	-DPACKAGE_LOCALE_DIR=\""$(prefix)/$(DATADIRNAME)/locale"\" \
 	@PACKAGE_CFLAGS@
 
-bin_PROGRAMS = projet-final1
+bin_PROGRAMS = projet5
 
-projet_final1_SOURCES = \
+projet5_SOURCES = \
 	main.c \
 	support.c support.h \
 	interface.c interface.h \
-	callbacks.c callbacks.h\
-	membre.c membre.h
+	callbacks.c callbacks.h \
+	centre.c centre.h \
+	coach.c coach.h
 
-projet_final1_LDADD = @PACKAGE_LIBS@ $(INTLLIBS)
+projet5_LDADD = @PACKAGE_LIBS@ $(INTLLIBS)
 
