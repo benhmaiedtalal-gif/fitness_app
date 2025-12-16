@@ -1,0 +1,16 @@
+*.o
+src/.deps/
+autom4te.cache/
+
+config.log
+config.status
+config.h
+configure
+
+Makefile
+Makefile.in
+src/Makefile
+src/Makefile.in
+po/Makefile
+po/Makefile.in
+
