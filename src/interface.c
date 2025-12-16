@@ -1531,6 +1531,16 @@ create_ADMINISTRATION (void)
   GtkWidget *taleltreeview;
   GtkWidget *entry2;
   GtkWidget *entry3;
+  GtkWidget *talelbuttonmod;
+  GtkWidget *alignment62;
+  GtkWidget *hbox61;
+  GtkWidget *image72;
+  GtkWidget *label250;
+  GtkWidget *talelbuttonsupp;
+  GtkWidget *alignment61;
+  GtkWidget *hbox60;
+  GtkWidget *image71;
+  GtkWidget *label249;
   GtkWidget *dec4;
   GtkWidget *label191;
   GtkWidget *talelmenucategorie;
@@ -1562,23 +1572,13 @@ create_ADMINISTRATION (void)
   GtkWidget *label193;
   GtkWidget *label194;
   GtkWidget *label198;
-  GtkWidget *talelradioetatn;
   GtkWidget *talelradioetatd;
-  GtkWidget *talelbuttonsupp;
-  GtkWidget *alignment61;
-  GtkWidget *hbox60;
-  GtkWidget *image71;
-  GtkWidget *label249;
+  GtkWidget *talelradioetatn;
   GtkWidget *talelbuttonajout;
   GtkWidget *alignment40;
   GtkWidget *hbox40;
   GtkWidget *image51;
   GtkWidget *label202;
-  GtkWidget *talelbuttonmod;
-  GtkWidget *alignment62;
-  GtkWidget *hbox61;
-  GtkWidget *image72;
-  GtkWidget *label250;
   GtkWidget *talelbuttonrech;
   GtkWidget *alignment28;
   GtkWidget *hbox28;
@@ -1719,6 +1719,7 @@ create_ADMINISTRATION (void)
   gtk_entry_set_invisible_char (GTK_ENTRY (dhiainputmdp), 8226);
 
   dhiainputnom = gtk_entry_new ();
+  gtk_widget_show (dhiainputnom);
   gtk_fixed_put (GTK_FIXED (dhiafixed), dhiainputnom, 128, 392);
   gtk_widget_set_size_request (dhiainputnom, 184, 32);
   gtk_entry_set_invisible_char (GTK_ENTRY (dhiainputnom), 8226);
@@ -2634,7 +2635,7 @@ create_ADMINISTRATION (void)
   gtk_fixed_put (GTK_FIXED (talelfixed), talelspinmois, 432, 336);
   gtk_widget_set_size_request (talelspinmois, 60, 32);
 
-  talelspinannee_adj = gtk_adjustment_new (1, 2000, 2100, 1, 10, 10);
+  talelspinannee_adj = gtk_adjustment_new (1, 0, 100, 1, 10, 10);
   talelspinannee = gtk_spin_button_new (GTK_ADJUSTMENT (talelspinannee_adj), 1, 0);
   gtk_widget_show (talelspinannee);
   gtk_fixed_put (GTK_FIXED (talelfixed), talelspinannee, 432, 400);
@@ -2694,6 +2695,48 @@ create_ADMINISTRATION (void)
   gtk_fixed_put (GTK_FIXED (talelfixed), entry3, 672, 136);
   gtk_widget_set_size_request (entry3, 224, 32);
   gtk_entry_set_invisible_char (GTK_ENTRY (entry3), 8226);
+
+  talelbuttonmod = gtk_button_new ();
+  gtk_widget_show (talelbuttonmod);
+  gtk_fixed_put (GTK_FIXED (talelfixed), talelbuttonmod, 896, 136);
+  gtk_widget_set_size_request (talelbuttonmod, 160, 32);
+
+  alignment62 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment62);
+  gtk_container_add (GTK_CONTAINER (talelbuttonmod), alignment62);
+
+  hbox61 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox61);
+  gtk_container_add (GTK_CONTAINER (alignment62), hbox61);
+
+  image72 = gtk_image_new_from_stock ("gtk-edit", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image72);
+  gtk_box_pack_start (GTK_BOX (hbox61), image72, FALSE, FALSE, 0);
+
+  label250 = gtk_label_new_with_mnemonic (_("Modifier"));
+  gtk_widget_show (label250);
+  gtk_box_pack_start (GTK_BOX (hbox61), label250, FALSE, FALSE, 0);
+
+  talelbuttonsupp = gtk_button_new ();
+  gtk_widget_show (talelbuttonsupp);
+  gtk_fixed_put (GTK_FIXED (talelfixed), talelbuttonsupp, 904, 72);
+  gtk_widget_set_size_request (talelbuttonsupp, 152, 32);
+
+  alignment61 = gtk_alignment_new (0.5, 0.5, 0, 0);
+  gtk_widget_show (alignment61);
+  gtk_container_add (GTK_CONTAINER (talelbuttonsupp), alignment61);
+
+  hbox60 = gtk_hbox_new (FALSE, 2);
+  gtk_widget_show (hbox60);
+  gtk_container_add (GTK_CONTAINER (alignment61), hbox60);
+
+  image71 = gtk_image_new_from_stock ("gtk-delete", GTK_ICON_SIZE_BUTTON);
+  gtk_widget_show (image71);
+  gtk_box_pack_start (GTK_BOX (hbox60), image71, FALSE, FALSE, 0);
+
+  label249 = gtk_label_new_with_mnemonic (_("supprimer"));
+  gtk_widget_show (label249);
+  gtk_box_pack_start (GTK_BOX (hbox60), label249, FALSE, FALSE, 0);
 
   dec4 = gtk_button_new_with_mnemonic (_("deconnection"));
   gtk_widget_show (dec4);
@@ -2822,13 +2865,6 @@ create_ADMINISTRATION (void)
   gtk_fixed_put (GTK_FIXED (talelfixed), label198, 360, 464);
   gtk_widget_set_size_request (label198, 51, 24);
 
-  talelradioetatn = gtk_radio_button_new_with_mnemonic (NULL, _("NON DISPONIBLE"));
-  gtk_widget_show (talelradioetatn);
-  gtk_fixed_put (GTK_FIXED (talelfixed), talelradioetatn, 552, 464);
-  gtk_widget_set_size_request (talelradioetatn, 160, 24);
-  gtk_radio_button_set_group (GTK_RADIO_BUTTON (talelradioetatn), eyaradiostatuta_group);
-  eyaradiostatuta_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (talelradioetatn));
-
   talelradioetatd = gtk_radio_button_new_with_mnemonic (NULL, _("DISPONIBLE"));
   gtk_widget_show (talelradioetatd);
   gtk_fixed_put (GTK_FIXED (talelfixed), talelradioetatd, 416, 464);
@@ -2836,26 +2872,12 @@ create_ADMINISTRATION (void)
   gtk_radio_button_set_group (GTK_RADIO_BUTTON (talelradioetatd), eyaradiostatuta_group);
   eyaradiostatuta_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (talelradioetatd));
 
-  talelbuttonsupp = gtk_button_new ();
-  gtk_widget_show (talelbuttonsupp);
-  gtk_fixed_put (GTK_FIXED (talelfixed), talelbuttonsupp, 904, 72);
-  gtk_widget_set_size_request (talelbuttonsupp, 152, 32);
-
-  alignment61 = gtk_alignment_new (0.5, 0.5, 0, 0);
-  gtk_widget_show (alignment61);
-  gtk_container_add (GTK_CONTAINER (talelbuttonsupp), alignment61);
-
-  hbox60 = gtk_hbox_new (FALSE, 2);
-  gtk_widget_show (hbox60);
-  gtk_container_add (GTK_CONTAINER (alignment61), hbox60);
-
-  image71 = gtk_image_new_from_stock ("gtk-delete", GTK_ICON_SIZE_BUTTON);
-  gtk_widget_show (image71);
-  gtk_box_pack_start (GTK_BOX (hbox60), image71, FALSE, FALSE, 0);
-
-  label249 = gtk_label_new_with_mnemonic (_("supprimer"));
-  gtk_widget_show (label249);
-  gtk_box_pack_start (GTK_BOX (hbox60), label249, FALSE, FALSE, 0);
+  talelradioetatn = gtk_radio_button_new_with_mnemonic (NULL, _("NON DISPONIBLE"));
+  gtk_widget_show (talelradioetatn);
+  gtk_fixed_put (GTK_FIXED (talelfixed), talelradioetatn, 552, 464);
+  gtk_widget_set_size_request (talelradioetatn, 160, 24);
+  gtk_radio_button_set_group (GTK_RADIO_BUTTON (talelradioetatn), eyaradiostatuta_group);
+  eyaradiostatuta_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (talelradioetatn));
 
   talelbuttonajout = gtk_button_new ();
   gtk_widget_show (talelbuttonajout);
@@ -2877,27 +2899,6 @@ create_ADMINISTRATION (void)
   label202 = gtk_label_new_with_mnemonic (_("AJOUTER"));
   gtk_widget_show (label202);
   gtk_box_pack_start (GTK_BOX (hbox40), label202, FALSE, FALSE, 0);
-
-  talelbuttonmod = gtk_button_new ();
-  gtk_widget_show (talelbuttonmod);
-  gtk_fixed_put (GTK_FIXED (talelfixed), talelbuttonmod, 896, 136);
-  gtk_widget_set_size_request (talelbuttonmod, 160, 32);
-
-  alignment62 = gtk_alignment_new (0.5, 0.5, 0, 0);
-  gtk_widget_show (alignment62);
-  gtk_container_add (GTK_CONTAINER (talelbuttonmod), alignment62);
-
-  hbox61 = gtk_hbox_new (FALSE, 2);
-  gtk_widget_show (hbox61);
-  gtk_container_add (GTK_CONTAINER (alignment62), hbox61);
-
-  image72 = gtk_image_new_from_stock ("gtk-edit", GTK_ICON_SIZE_BUTTON);
-  gtk_widget_show (image72);
-  gtk_box_pack_start (GTK_BOX (hbox61), image72, FALSE, FALSE, 0);
-
-  label250 = gtk_label_new_with_mnemonic (_("Modifier"));
-  gtk_widget_show (label250);
-  gtk_box_pack_start (GTK_BOX (hbox61), label250, FALSE, FALSE, 0);
 
   talelbuttonrech = gtk_button_new ();
   gtk_widget_show (talelbuttonrech);
@@ -3617,6 +3618,12 @@ create_ADMINISTRATION (void)
   g_signal_connect ((gpointer) talelspinannee, "value_changed",
                     G_CALLBACK (on_talelspinannee_value_changed),
                     NULL);
+  g_signal_connect ((gpointer) talelbuttonmod, "clicked",
+                    G_CALLBACK (on_talelbuttonmod_clicked),
+                    NULL);
+  g_signal_connect ((gpointer) talelbuttonsupp, "clicked",
+                    G_CALLBACK (on_talelbuttonsupp_clicked),
+                    NULL);
   g_signal_connect ((gpointer) dec4, "clicked",
                     G_CALLBACK (on_dec4_clicked),
                     NULL);
@@ -3680,20 +3687,14 @@ create_ADMINISTRATION (void)
   g_signal_connect ((gpointer) menuitem64, "activate",
                     G_CALLBACK (on_coaching_nutritionnel1_activate),
                     NULL);
-  g_signal_connect ((gpointer) talelradioetatn, "toggled",
-                    G_CALLBACK (on_talelradioetatn_toggled),
-                    NULL);
   g_signal_connect ((gpointer) talelradioetatd, "toggled",
                     G_CALLBACK (on_talelradioetatd_toggled),
                     NULL);
-  g_signal_connect ((gpointer) talelbuttonsupp, "clicked",
-                    G_CALLBACK (on_talelbuttonsupp_clicked),
+  g_signal_connect ((gpointer) talelradioetatn, "toggled",
+                    G_CALLBACK (on_talelradioetatn_toggled),
                     NULL);
   g_signal_connect ((gpointer) talelbuttonajout, "clicked",
                     G_CALLBACK (on_talelbuttonajout_clicked),
-                    NULL);
-  g_signal_connect ((gpointer) talelbuttonmod, "clicked",
-                    G_CALLBACK (on_talelbuttonmod_clicked),
                     NULL);
   g_signal_connect ((gpointer) talelbuttonrech, "clicked",
                     G_CALLBACK (on_talelbuttonrech_clicked),
@@ -4034,6 +4035,16 @@ create_ADMINISTRATION (void)
   GLADE_HOOKUP_OBJECT (ADMINISTRATION, taleltreeview, "taleltreeview");
   GLADE_HOOKUP_OBJECT (ADMINISTRATION, entry2, "entry2");
   GLADE_HOOKUP_OBJECT (ADMINISTRATION, entry3, "entry3");
+  GLADE_HOOKUP_OBJECT (ADMINISTRATION, talelbuttonmod, "talelbuttonmod");
+  GLADE_HOOKUP_OBJECT (ADMINISTRATION, alignment62, "alignment62");
+  GLADE_HOOKUP_OBJECT (ADMINISTRATION, hbox61, "hbox61");
+  GLADE_HOOKUP_OBJECT (ADMINISTRATION, image72, "image72");
+  GLADE_HOOKUP_OBJECT (ADMINISTRATION, label250, "label250");
+  GLADE_HOOKUP_OBJECT (ADMINISTRATION, talelbuttonsupp, "talelbuttonsupp");
+  GLADE_HOOKUP_OBJECT (ADMINISTRATION, alignment61, "alignment61");
+  GLADE_HOOKUP_OBJECT (ADMINISTRATION, hbox60, "hbox60");
+  GLADE_HOOKUP_OBJECT (ADMINISTRATION, image71, "image71");
+  GLADE_HOOKUP_OBJECT (ADMINISTRATION, label249, "label249");
   GLADE_HOOKUP_OBJECT (ADMINISTRATION, dec4, "dec4");
   GLADE_HOOKUP_OBJECT (ADMINISTRATION, label191, "label191");
   GLADE_HOOKUP_OBJECT (ADMINISTRATION, talelmenucategorie, "talelmenucategorie");
@@ -4065,23 +4076,13 @@ create_ADMINISTRATION (void)
   GLADE_HOOKUP_OBJECT (ADMINISTRATION, label193, "label193");
   GLADE_HOOKUP_OBJECT (ADMINISTRATION, label194, "label194");
   GLADE_HOOKUP_OBJECT (ADMINISTRATION, label198, "label198");
-  GLADE_HOOKUP_OBJECT (ADMINISTRATION, talelradioetatn, "talelradioetatn");
   GLADE_HOOKUP_OBJECT (ADMINISTRATION, talelradioetatd, "talelradioetatd");
-  GLADE_HOOKUP_OBJECT (ADMINISTRATION, talelbuttonsupp, "talelbuttonsupp");
-  GLADE_HOOKUP_OBJECT (ADMINISTRATION, alignment61, "alignment61");
-  GLADE_HOOKUP_OBJECT (ADMINISTRATION, hbox60, "hbox60");
-  GLADE_HOOKUP_OBJECT (ADMINISTRATION, image71, "image71");
-  GLADE_HOOKUP_OBJECT (ADMINISTRATION, label249, "label249");
+  GLADE_HOOKUP_OBJECT (ADMINISTRATION, talelradioetatn, "talelradioetatn");
   GLADE_HOOKUP_OBJECT (ADMINISTRATION, talelbuttonajout, "talelbuttonajout");
   GLADE_HOOKUP_OBJECT (ADMINISTRATION, alignment40, "alignment40");
   GLADE_HOOKUP_OBJECT (ADMINISTRATION, hbox40, "hbox40");
   GLADE_HOOKUP_OBJECT (ADMINISTRATION, image51, "image51");
   GLADE_HOOKUP_OBJECT (ADMINISTRATION, label202, "label202");
-  GLADE_HOOKUP_OBJECT (ADMINISTRATION, talelbuttonmod, "talelbuttonmod");
-  GLADE_HOOKUP_OBJECT (ADMINISTRATION, alignment62, "alignment62");
-  GLADE_HOOKUP_OBJECT (ADMINISTRATION, hbox61, "hbox61");
-  GLADE_HOOKUP_OBJECT (ADMINISTRATION, image72, "image72");
-  GLADE_HOOKUP_OBJECT (ADMINISTRATION, label250, "label250");
   GLADE_HOOKUP_OBJECT (ADMINISTRATION, talelbuttonrech, "talelbuttonrech");
   GLADE_HOOKUP_OBJECT (ADMINISTRATION, alignment28, "alignment28");
   GLADE_HOOKUP_OBJECT (ADMINISTRATION, hbox28, "hbox28");
