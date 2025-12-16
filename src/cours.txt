@@ -1,0 +1,4 @@
+1|Cardio Training|Coach Ala|2024-12-10 10:00|Salle A|Fitness|Mixte|DISPONIBLE|60|10
+2|Yoga|Coach Fatima|2024-12-10 14:00|Salle B|Bien-être|Féminin|DISPONIBLE|2|15
+3|Musculation|Coach Karim|2024-12-11 09:00|Salle C|Fitness|Masculin|DISPONIBLE|90|9
+1234|Bien être|Coch asma|2025-01-01 12:00|Salle G|YOGA|Mixte|DISPONIBLE|2|19
